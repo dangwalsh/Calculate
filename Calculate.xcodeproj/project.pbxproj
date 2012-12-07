@@ -18,7 +18,8 @@
 		37F6FFC41664FAB400C8F343 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 37F6FFC31664FAB400C8F343 /* Default-568h@2x.png */; };
 		37F6FFC71664FAB400C8F343 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F6FFC51664FAB400C8F343 /* MainStoryboard_iPhone.storyboard */; };
 		37F6FFCA1664FAB400C8F343 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F6FFC81664FAB400C8F343 /* MainStoryboard_iPad.storyboard */; };
-		37F6FFCD1664FAB400C8F343 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 37F6FFCC1664FAB400C8F343 /* ViewController.m */; };
+		37F6FFCD1664FAB400C8F343 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37F6FFCC1664FAB400C8F343 /* ViewController.mm */; };
+		37F6FFD51664FAE400C8F343 /* calculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F6FFD31664FAE400C8F343 /* calculate.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +39,9 @@
 		37F6FFC61664FAB400C8F343 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		37F6FFC91664FAB400C8F343 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		37F6FFCB1664FAB400C8F343 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		37F6FFCC1664FAB400C8F343 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		37F6FFCC1664FAB400C8F343 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
+		37F6FFD31664FAE400C8F343 /* calculate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calculate.cpp; sourceTree = "<group>"; };
+		37F6FFD41664FAE400C8F343 /* calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +93,9 @@
 				37F6FFC51664FAB400C8F343 /* MainStoryboard_iPhone.storyboard */,
 				37F6FFC81664FAB400C8F343 /* MainStoryboard_iPad.storyboard */,
 				37F6FFCB1664FAB400C8F343 /* ViewController.h */,
-				37F6FFCC1664FAB400C8F343 /* ViewController.m */,
+				37F6FFCC1664FAB400C8F343 /* ViewController.mm */,
+				37F6FFD31664FAE400C8F343 /* calculate.cpp */,
+				37F6FFD41664FAE400C8F343 /* calculate.h */,
 				37F6FFB41664FAB400C8F343 /* Supporting Files */,
 			);
 			path = Calculate;
@@ -179,7 +184,8 @@
 			files = (
 				37F6FFBA1664FAB400C8F343 /* main.m in Sources */,
 				37F6FFBE1664FAB400C8F343 /* AppDelegate.m in Sources */,
-				37F6FFCD1664FAB400C8F343 /* ViewController.m in Sources */,
+				37F6FFCD1664FAB400C8F343 /* ViewController.mm in Sources */,
+				37F6FFD51664FAE400C8F343 /* calculate.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +312,7 @@
 				37F6FFD21664FAB400C8F343 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
