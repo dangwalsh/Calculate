@@ -11,7 +11,8 @@
 
 @interface ViewController : UIViewController {
     NSString *string;
-    calculate *calc;
+    NSNumberFormatter *numberFormatter;
+    UIButton *btnPlus;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *screen;
@@ -26,13 +27,17 @@
 - (IBAction)eight:(id)sender;
 - (IBAction)nine:(id)sender;
 - (IBAction)zero:(id)sender;
+- (IBAction)point:(id)sender;
+- (IBAction)posneg:(id)sender;
 - (IBAction)add:(id)sender;
 - (IBAction)subtract:(id)sender;
 - (IBAction)multiply:(id)sender;
 - (IBAction)divide:(id)sender;
 - (IBAction)equals:(id)sender;
 - (IBAction)memadd:(id)sender;
+- (IBAction)memcall:(id)sender;
 - (IBAction)memclear:(id)sender;
 - (IBAction)clear:(id)sender;
+- (IBAction)backspace:(id)sender;
 
 @end

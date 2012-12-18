@@ -20,15 +20,19 @@ class calculate
     vector<string> tokens;
 public:
     calculate();
-    int add(int a, int b);
-    int subtract(int a, int b);
-    int multiply(int a, int b);
-    int divide(int a, int b);
+    double add(double a, double b);
+    double subtract(double a, double b);
+    double multiply(double a, double b);
+    double divide(double a, double b);
+    double analyze();
+    void parse(string& s);
+    void remchar(string& s);
+    void convert(string& s);
     void memtoggle();
-    void memadd(int a);
+    void memadd(double a);
     void memclear();
-    int parse(string& s);
-    int analyze();
+    string locate();
+    void backspace(string& s);
 };
 
 
