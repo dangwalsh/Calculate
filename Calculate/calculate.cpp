@@ -10,12 +10,15 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <cstring>
 #include <sstream>
 #include <algorithm>
 #include <iterator>
-#include <algorithm>
 #include "calculate.h"
 using namespace std;
+
+bool calculate::_mem;
+double calculate::_memtotal;
 
 calculate::calculate()
 {
@@ -33,8 +36,7 @@ calculate::calculate()
         cout << p << "\t" << *p << "\n";
     }
 */
-    memclear();
-    _mem = false;
+    calculate::_mem = false;
 }
 
 double calculate::add(double a, double b)
@@ -68,26 +70,47 @@ double calculate::divide(double a,double b)
 
 void calculate::memtoggle()
 {
-    _mem = !_mem;
+    calculate::_mem = !_mem;
 }
 
-void calculate::memadd(double a)
+void calculate::memadd()
 {
-    _total += a;
+    if (tokens.size() == 1) {
+        double n = atof(tokens[0].c_str());
+        calculate::_memtotal += n;
+    }    
+}
+
+void calculate::memsubtract()
+{
+    if (tokens.size() == 1) {
+        double n = atof(tokens[0].c_str());
+        calculate::_memtotal -= n;
+    }
+}
+
+double calculate::memrecall()
+{
+    return calculate::_memtotal;
 }
 
 void calculate::memclear()
 {
-    _total = 0.0;
+    calculate::_memtotal = 0.0;
 }
 
-void calculate::parse(string& s)
+bool calculate::parse(string& s)
 {
-    istringstream iss(s);
-
-    copy(istream_iterator<string>(iss),
-         istream_iterator<string>(),
-         back_inserter<vector<string> >(tokens));
+    if (s != "") {
+        istringstream iss(s);
+        
+        copy(istream_iterator<string>(iss),
+             istream_iterator<string>(),
+             back_inserter<vector<string> >(tokens));
+        
+        return true;
+    }
+    return false;
 }
 
 string calculate::locate()
@@ -135,23 +158,51 @@ void calculate::convert(string& s)
 double calculate::analyze()
 {
     double answer;
+    size_t n = tokens.size();
+    vector<double> num;
+    vector<string> oper;
     
-    remchar(tokens[0]);
-    double left = atof(tokens[0].c_str());
-    remchar(tokens[2]);
-    double right = atof(tokens[2].c_str());
-    string temp = tokens[1];
+    for (int i = 0; i < n; ++i) {
+        remchar(tokens[i]);
+        num.push_back(atof(tokens[i].c_str()));
+        if (!num[i]) {
+            oper.push_back(tokens[i]);
+        }
+    }
     
-    if (temp == "+") {
-        answer = add(left, right);
-    } else if (temp == "−") {
-        answer = subtract(left, right);
-    } else if (temp == "×") {
-        answer = multiply(left, right);
-    } else if (temp == "÷") {
-        answer = divide(left, right);
-    } else {
-        cerr << "Invalid operand.\n";
+    n = oper.size();
+    
+    for (size_t i = 0; i < n; ) {
+        size_t j = i * 2;
+        if (oper[i] == "×") {
+            answer = multiply(num[j], num[j+2]);
+            num[j] = answer;
+            num.erase(num.begin() + (j+1), num.begin() + (j+3));
+            oper.erase(oper.begin() + i);
+            --n;
+        } else if (oper[i] == "÷") {
+            answer = divide(num[j], num[j+2]);
+            num[j] = answer;
+            num.erase(num.begin() + (j+1), num.begin() + (j+3));
+            oper.erase(oper.begin() + i);
+            --n;
+        } else {
+            ++i;
+        }
+    }
+    
+    n = oper.size();
+    
+    for (size_t i = 0; i < n; ++i) {
+        size_t j = i * 2;
+        if (oper[i] == "+") {
+            answer = add(num[j], num[j+2]);
+        } else if (oper[i] == "−") {
+            answer = subtract(num[j], num[j+2]);
+        } else {
+            cerr << "Invalid operand.\n";
+        }
+        num[j+2] = answer;
     }
     
     return answer;
@@ -168,9 +219,13 @@ void calculate::remchar(string& s)
     }
 }
 
+/*
 void calculate::backspace(string& s)
 {
-    if (s.size() > 0) {
-        s.resize(s.size() - 1);
+    int n = s.size();
+    if (n > 0) {
+        //s.resize(s.size() - 1);
+        s.erase(s.begin() + (n-1));
     }
 }
+*/

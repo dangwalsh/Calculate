@@ -7,15 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "calculate.h"
 
 @interface ViewController : UIViewController {
     NSString *string;
     NSNumberFormatter *numberFormatter;
-    UIButton *btnPlus;
+    //UIButton *btnPlus;
+    CALayer *layer;
 }
 
-@property (nonatomic, retain) IBOutlet UITextField *screen;
+@property (nonatomic, assign)CAGradientLayer *material;
+@property (nonatomic, retain)IBOutlet UITextField *screen;
 
 - (IBAction)one:(id)sender;
 - (IBAction)two:(id)sender;
@@ -35,7 +38,8 @@
 - (IBAction)divide:(id)sender;
 - (IBAction)equals:(id)sender;
 - (IBAction)memadd:(id)sender;
-- (IBAction)memcall:(id)sender;
+- (IBAction)memsubtract:(id)sender;
+- (IBAction)memrecall:(id)sender;
 - (IBAction)memclear:(id)sender;
 - (IBAction)clear:(id)sender;
 - (IBAction)backspace:(id)sender;

@@ -20,6 +20,14 @@
 		37F6FFCA1664FAB400C8F343 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37F6FFC81664FAB400C8F343 /* MainStoryboard_iPad.storyboard */; };
 		37F6FFCD1664FAB400C8F343 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 37F6FFCC1664FAB400C8F343 /* ViewController.mm */; };
 		37F6FFD51664FAE400C8F343 /* calculate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37F6FFD31664FAE400C8F343 /* calculate.cpp */; };
+		B52B86E1169F93BD00A11B68 /* CalcButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B52B86DE169F93BD00A11B68 /* CalcButton.m */; };
+		B52B86E2169F93BD00A11B68 /* CalcTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B52B86E0169F93BD00A11B68 /* CalcTextField.m */; };
+		B52B86E6169F9A3C00A11B68 /* NumberButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B52B86E5169F9A3C00A11B68 /* NumberButton.m */; };
+		B52B86E9169F9BEE00A11B68 /* OperatorButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B52B86E8169F9BEE00A11B68 /* OperatorButton.m */; };
+		B570C8A516A8DBB0006EC61C /* BackButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B570C8A416A8DBB0006EC61C /* BackButton.m */; };
+		B5725AD7169A289B00790FED /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5725AD6169A289B00790FED /* QuartzCore.framework */; };
+		B5CE3BCB16A8D3D700A33F19 /* MemoryButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3BCA16A8D3D700A33F19 /* MemoryButton.m */; };
+		B5E1D55916A8D5AA00EFA3BA /* ClearButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E1D55816A8D5AA00EFA3BA /* ClearButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +50,21 @@
 		37F6FFCC1664FAB400C8F343 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		37F6FFD31664FAE400C8F343 /* calculate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calculate.cpp; sourceTree = "<group>"; };
 		37F6FFD41664FAE400C8F343 /* calculate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculate.h; sourceTree = "<group>"; };
+		B52B86DD169F93BD00A11B68 /* CalcButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcButton.h; sourceTree = "<group>"; };
+		B52B86DE169F93BD00A11B68 /* CalcButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcButton.m; sourceTree = "<group>"; };
+		B52B86DF169F93BD00A11B68 /* CalcTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalcTextField.h; sourceTree = "<group>"; };
+		B52B86E0169F93BD00A11B68 /* CalcTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalcTextField.m; sourceTree = "<group>"; };
+		B52B86E4169F9A3C00A11B68 /* NumberButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberButton.h; sourceTree = "<group>"; };
+		B52B86E5169F9A3C00A11B68 /* NumberButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberButton.m; sourceTree = "<group>"; };
+		B52B86E7169F9BEE00A11B68 /* OperatorButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperatorButton.h; sourceTree = "<group>"; };
+		B52B86E8169F9BEE00A11B68 /* OperatorButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperatorButton.m; sourceTree = "<group>"; };
+		B570C8A316A8DBB0006EC61C /* BackButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackButton.h; sourceTree = "<group>"; };
+		B570C8A416A8DBB0006EC61C /* BackButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackButton.m; sourceTree = "<group>"; };
+		B5725AD6169A289B00790FED /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B5CE3BC916A8D3D700A33F19 /* MemoryButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryButton.h; sourceTree = "<group>"; };
+		B5CE3BCA16A8D3D700A33F19 /* MemoryButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MemoryButton.m; sourceTree = "<group>"; };
+		B5E1D55716A8D5AA00EFA3BA /* ClearButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearButton.h; sourceTree = "<group>"; };
+		B5E1D55816A8D5AA00EFA3BA /* ClearButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5725AD7169A289B00790FED /* QuartzCore.framework in Frameworks */,
 				37F6FFAE1664FAB400C8F343 /* UIKit.framework in Frameworks */,
 				37F6FFB01664FAB400C8F343 /* Foundation.framework in Frameworks */,
 				37F6FFB21664FAB400C8F343 /* CoreGraphics.framework in Frameworks */,
@@ -78,6 +102,7 @@
 		37F6FFAC1664FAB400C8F343 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5725AD6169A289B00790FED /* QuartzCore.framework */,
 				37F6FFAD1664FAB400C8F343 /* UIKit.framework */,
 				37F6FFAF1664FAB400C8F343 /* Foundation.framework */,
 				37F6FFB11664FAB400C8F343 /* CoreGraphics.framework */,
@@ -88,14 +113,28 @@
 		37F6FFB31664FAB400C8F343 /* Calculate */ = {
 			isa = PBXGroup;
 			children = (
+				B570C8A316A8DBB0006EC61C /* BackButton.h */,
+				B570C8A416A8DBB0006EC61C /* BackButton.m */,
+				B5E1D55716A8D5AA00EFA3BA /* ClearButton.h */,
+				B5E1D55816A8D5AA00EFA3BA /* ClearButton.m */,
+				B5CE3BC916A8D3D700A33F19 /* MemoryButton.h */,
+				B5CE3BCA16A8D3D700A33F19 /* MemoryButton.m */,
+				B52B86E7169F9BEE00A11B68 /* OperatorButton.h */,
+				B52B86E8169F9BEE00A11B68 /* OperatorButton.m */,
+				B52B86E4169F9A3C00A11B68 /* NumberButton.h */,
+				B52B86E5169F9A3C00A11B68 /* NumberButton.m */,
+				B52B86DD169F93BD00A11B68 /* CalcButton.h */,
+				B52B86DE169F93BD00A11B68 /* CalcButton.m */,
+				B52B86DF169F93BD00A11B68 /* CalcTextField.h */,
+				B52B86E0169F93BD00A11B68 /* CalcTextField.m */,
 				37F6FFBC1664FAB400C8F343 /* AppDelegate.h */,
 				37F6FFBD1664FAB400C8F343 /* AppDelegate.m */,
-				37F6FFC51664FAB400C8F343 /* MainStoryboard_iPhone.storyboard */,
-				37F6FFC81664FAB400C8F343 /* MainStoryboard_iPad.storyboard */,
 				37F6FFCB1664FAB400C8F343 /* ViewController.h */,
 				37F6FFCC1664FAB400C8F343 /* ViewController.mm */,
 				37F6FFD31664FAE400C8F343 /* calculate.cpp */,
 				37F6FFD41664FAE400C8F343 /* calculate.h */,
+				37F6FFC51664FAB400C8F343 /* MainStoryboard_iPhone.storyboard */,
+				37F6FFC81664FAB400C8F343 /* MainStoryboard_iPad.storyboard */,
 				37F6FFB41664FAB400C8F343 /* Supporting Files */,
 			);
 			path = Calculate;
@@ -186,6 +225,13 @@
 				37F6FFBE1664FAB400C8F343 /* AppDelegate.m in Sources */,
 				37F6FFCD1664FAB400C8F343 /* ViewController.mm in Sources */,
 				37F6FFD51664FAE400C8F343 /* calculate.cpp in Sources */,
+				B52B86E1169F93BD00A11B68 /* CalcButton.m in Sources */,
+				B52B86E2169F93BD00A11B68 /* CalcTextField.m in Sources */,
+				B52B86E6169F9A3C00A11B68 /* NumberButton.m in Sources */,
+				B52B86E9169F9BEE00A11B68 /* OperatorButton.m in Sources */,
+				B5CE3BCB16A8D3D700A33F19 /* MemoryButton.m in Sources */,
+				B5E1D55916A8D5AA00EFA3BA /* ClearButton.m in Sources */,
+				B570C8A516A8DBB0006EC61C /* BackButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +323,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Calculate/Calculate-Prefix.pch";
 				INFOPLIST_FILE = "Calculate/Calculate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -288,7 +336,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Calculate/Calculate-Prefix.pch";
 				INFOPLIST_FILE = "Calculate/Calculate-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

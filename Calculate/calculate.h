@@ -15,8 +15,8 @@ using namespace std;
 
 class calculate
 {
-    double _total;
-    bool _mem;
+    static double _memtotal;
+    static bool _mem;
     vector<string> tokens;
 public:
     calculate();
@@ -25,14 +25,16 @@ public:
     double multiply(double a, double b);
     double divide(double a, double b);
     double analyze();
-    void parse(string& s);
+    bool parse(string& s);
     void remchar(string& s);
     void convert(string& s);
     void memtoggle();
-    void memadd(double a);
+    void memadd();
+    void memsubtract();
+    double memrecall();
     void memclear();
     string locate();
-    void backspace(string& s);
+    //void backspace(string& s);
 };
 
 

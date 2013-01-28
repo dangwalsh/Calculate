@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "calculate.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ViewController ()
 
@@ -21,21 +22,16 @@
     string = @""; // initialize through assignment
     numberFormatter = [[NSNumberFormatter alloc] init];
     [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    
-    // programatically create a custom button
-    btnPlus = [UIButton buttonWithType:UIButtonTypeCustom];
-    [btnPlus setBackgroundColor:[UIColor grayColor]];
-    CGRect b = self.view.bounds;
-    CGSize s = CGSizeMake(40, 32);
-    btnPlus.frame = CGRectMake(
-                               0,
-                               b.origin.y + (b.size.height - s.height),
-                               s.width,
-                               s.height);
-    [btnPlus setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [btnPlus setTitle:@"+" forState:UIControlStateNormal];
-    [btnPlus addTarget:self action:@selector(add:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btnPlus];
+    /*
+    self.material = [CAGradientLayer layer];
+    self.material.frame = self.view.bounds;
+    self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:1.0] CGColor],
+                                                     (id)[[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] CGColor],
+                                                     (id)[[UIColor colorWithRed:0.7 green:0.7 blue:0.7 alpha:1.0] CGColor],
+                                                     nil];
+    [self.view.layer insertSublayer:self.material atIndex:0];
+    self.material.transform = CATransform3DMakeRotation(45, 0, 0, 1);
+    */
 }
 
 - (void)didReceiveMemoryWarning
@@ -149,9 +145,26 @@
 {
     calculate *calc = new calculate();
     std::string *temp = new std::string([_screen.text UTF8String]);
-    calc->parse(*temp);
-    NSNumber *number = [NSNumber numberWithDouble:calc->analyze()];
-    _screen.text = [numberFormatter stringFromNumber:number];
+    if(calc->parse(*temp)) {
+        NSNumber *number = [NSNumber numberWithDouble:calc->analyze()];
+        _screen.text = [numberFormatter stringFromNumber:number];
+    }
+}
+
+- (IBAction)backspace:(id)sender
+{
+    /*
+    calculate *calc = new calculate();
+    std::string *temp = new std::string([string UTF8String]);
+    calc->backspace(*temp);
+    string = [NSString stringWithCString:temp->c_str() encoding:NSUTF8StringEncoding];
+    */
+
+    NSUInteger n = string.length;
+    NSRange shortened = {0,(n-1)};
+    NSString *temp = [string substringWithRange:shortened];
+    string = temp;
+    _screen.text = string;
 }
 
 - (IBAction)clear:(id)sender
@@ -162,26 +175,34 @@
 
 - (IBAction)memadd:(id)sender
 {
-    
+    calculate *calc = new calculate();
+    std::string *temp = new std::string([_screen.text UTF8String]);
+    calc->parse(*temp);    
+    calc->memadd();
 }
 
-- (IBAction)memcall:(id)sender
+- (IBAction)memsubtract:(id)sender
 {
-    
+    calculate *calc = new calculate();
+    std::string *temp = new std::string([_screen.text UTF8String]);
+    calc->parse(*temp);
+    calc->memsubtract();
+}
+
+- (IBAction)memrecall:(id)sender
+{
+    calculate *calc = new calculate();
+    NSNumber *number = [NSNumber numberWithDouble:calc->memrecall()];
+    string = [string stringByAppendingString:[numberFormatter stringFromNumber:number]];
+    _screen.text = string;
 }
 
 - (IBAction)memclear:(id)sender
 {
-    
+    calculate *calc = new calculate();
+    calc->memclear();
 }
 
-- (IBAction)backspace:(id)sender
-{
-    calculate *calc = new calculate();
-    std::string *temp = new std::string([string UTF8String]);
-    calc->backspace(*temp);
-    string = [NSString stringWithCString:temp->c_str() encoding:NSUTF8StringEncoding];
-    _screen.text = string;
-}
+
 
 @end
