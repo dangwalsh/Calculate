@@ -9,7 +9,7 @@
 #import "CalcButton.h"
 
 @implementation CalcButton
-
+/*
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -29,11 +29,14 @@
     }
     return self;
 }
-
+*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        
+        self.buttonColor = [UIColor whiteColor];
+        self.backgroundColor = self.buttonColor;
         self.layer.cornerRadius = 6.0f;
         
         self.layer.borderWidth = 0.5f;
@@ -43,13 +46,14 @@
         self.layer.shadowColor = [UIColor blackColor].CGColor;
         self.layer.shadowOpacity = 0.5f;
         self.layer.shadowOffset = CGSizeMake(0.0f, 1.0f);
+         
+        //self.material = [CAGradientLayer layer];
+        //self.material.frame = self.bounds;
+        //self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0] CGColor], nil];
+        //self.material.cornerRadius = 6.0f;
         
-        self.material = [CAGradientLayer layer];
-        self.material.frame = self.bounds;
-        self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.8 green:0.8 blue:0.8 alpha:1.0] CGColor], nil];
-        self.material.cornerRadius = 6.0f;
-        
-        [self.layer insertSublayer:self.material atIndex:0];
+        //[self.layer insertSublayer:self.material atIndex:0];
+         
         [self addTarget:self action:@selector(fingerDown) forControlEvents:UIControlEventTouchDown];
         [self addTarget:self action:@selector(fingerUp) forControlEvents:UIControlEventTouchUpInside];
     }
@@ -64,7 +68,7 @@
 
 - (void)fingerUp
 {
-    //self.backgroundColor = self.buttonColor;
+    self.backgroundColor = self.buttonColor;
     self.layer.shadowOffset = CGSizeMake(0.0f, 1.25f);
     
 }

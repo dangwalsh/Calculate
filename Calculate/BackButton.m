@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation BackButton
-
+/*
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -20,13 +20,15 @@
     }
     return self;
 }
-
+*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.buttonColor = [UIColor blueColor];
+        self.backgroundColor = self.buttonColor;
         self.layer.borderColor = [[UIColor colorWithRed:0.3 green:0.3 blue:0.7 alpha:1.0] CGColor];
-        self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.5 green:0.7 blue:1.0 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.2 green:0.3 blue:1.0 alpha:1.0] CGColor], nil];
+        //self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.5 green:0.7 blue:1.0 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.2 green:0.3 blue:1.0 alpha:1.0] CGColor], nil];
         self.transform = CGAffineTransformMakeScale(-1.0, 1.0);
     }
     return self;

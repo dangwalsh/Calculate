@@ -10,7 +10,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 @implementation MemoryButton
-
+/*
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -19,13 +19,15 @@
     }
     return self;
 }
-
+*/
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super initWithCoder:aDecoder];
     if (self) {
+        self.buttonColor = [UIColor blackColor];
+        self.backgroundColor = self.buttonColor;
         self.layer.borderColor = [[UIColor colorWithRed:0.075 green:0.075 blue:0.075 alpha:1.0] CGColor];
-        self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0] CGColor], nil];
+        //self.material.colors = [NSArray arrayWithObjects:(id)[[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0] CGColor], (id)[[UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:1.0] CGColor], nil];
     }
     return self;
 }

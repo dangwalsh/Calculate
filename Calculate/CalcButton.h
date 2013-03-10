@@ -11,12 +11,11 @@
 
 @interface CalcButton : UIButton
 
-@property(nonatomic, assign)CAGradientLayer *material;
-@property(nonatomic, assign)UIColor *buttonColor;
-
 - (void) fingerDown;
 - (void) fingerUp;
 
+@property (nonatomic, assign)CAGradientLayer *material;
+@property (nonatomic, assign)UIColor *buttonColor;
 @property (nonatomic, assign)float corner;
 
 @end
